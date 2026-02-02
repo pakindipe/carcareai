@@ -62,13 +62,6 @@ def evaluate_model(model: RandomForestClassifier, X_test: pd.DataFrame, y_test: 
     print(f"Confusion matrix saved to {fig_path}")
 
 
-def save_model(model: RandomForestClassifier, model_path: str) -> None:
-    """Persist the trained model to disk using joblib."""
-    model_file = Path(model_path)
-    model_file.parent.mkdir(parents=True, exist_ok=True)
-    joblib.dump(model, model_file)
-    print(f"Model saved to {model_file.resolve()}")
-
 
 def parse_args() -> argparse.Namespace:
     """Parse command‑line arguments."""
